@@ -1,20 +1,23 @@
-document
-  .querySelector(".registration-form")
-  .addEventListener("submit", function (e) {
-    // Prevent the form from actually submitting/refreshing the page
-    e.preventDefault();
+const form = document.querySelector(".registration-form");
+const passwordInput = document.querySelector('input[name="psw"]');
+const confirmPasswordInput = document.querySelector('input[name="psw-repeat"]');
+const togglePassword = document.getElementById("togglePassword");
 
-    // Get the password values
-    const password = document.querySelector('input[name="psw"]').value;
-    const confirmPassword = document.querySelector(
-      'input[name="psw-repeat"]',
-    ).value;
+// Show / Hide Password Logic
+togglePassword.addEventListener("change", function () {
+  const type = this.checked ? "text" : "password";
+  passwordInput.type = type;
+  confirmPasswordInput.type = type;
+});
 
-    // Simple Validation Logic
-    if (password !== confirmPassword) {
-      alert("Error: Passwords do not match!");
-    } else {
-      alert("Registration Successful! Git will now track this logic change.");
-      console.log("Form Data Ready to be sent to a server!");
-    }
-  });
+// Form Submit Validation
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    alert("Error: Passwords do not match!");
+  } else {
+    alert("Registration Successful! Password visibility feature added.");
+    console.log("Form Data Ready to be sent to a server!");
+  }
+});

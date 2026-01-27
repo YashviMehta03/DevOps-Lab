@@ -109,3 +109,21 @@ input:focus {
 .signin a:hover {
     text-decoration: underline;
 }
+
+.password-field {
+    position: relative;
+}
+
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.show-password input {
+    cursor: pointer;
+}
+

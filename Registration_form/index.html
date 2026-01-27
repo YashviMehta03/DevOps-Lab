@@ -26,10 +26,20 @@
                 title="Please enter a 10-digit phone number" required>
 
             <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
+            <div class="password-field">
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            
             <label for="psw-repeat">Repeat Password</label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <div class="password-field">
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            </div>
+            
+            <div class="show-password">
+                <input type="checkbox" id="togglePassword">
+                <label for="togglePassword">Show Password</label>
+            </div>
+
 
             <button type="submit" class="registerbtn">Register</button>
 
